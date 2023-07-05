@@ -1,0 +1,12 @@
+<div class="bg-gray-200 min-w-max h-fit items-center place-content-center">
+  <div class="flex flex-row justify-between p-2 items-center place-content-center">
+    <div class="brand min-w-fit">
+        <img src="https://img.icons8.com/ios-filled/50/frying-pan.png" alt="frying-pan"/>
+    </div>
+    <div class="side-menu p-2">
+      <ul class="list-none inline-flex gap-3">
+         <li class="cursor-pointer font-semibold hover:text-teal-600 hover:scale-95 duration-75" *ngFor="let each_element of navbar_list">{{each_element}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
