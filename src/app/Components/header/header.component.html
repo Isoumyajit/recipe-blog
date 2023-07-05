@@ -1,12 +1,38 @@
 <div class="bg-gray-200 min-w-max h-fit items-center place-content-center">
   <div class="flex flex-row justify-between p-2 items-center place-content-center">
     <div class="brand min-w-fit">
-        <img src="https://img.icons8.com/ios-filled/50/frying-pan.png" alt="frying-pan"/>
+      <a href="/"><img src="https://img.icons8.com/ios-filled/50/frying-pan.png" alt="frying-pan" /></a>
     </div>
     <div class="side-menu p-2">
       <ul class="list-none inline-flex gap-3">
-         <li class="cursor-pointer font-semibold hover:text-teal-600 hover:scale-95 duration-75" *ngFor="let each_element of navbar_list">{{each_element}}</li>
-      </ul>
-    </div>
-  </div>
+        <li class="cursor-pointer font-semibold hover:text-teal-600 hover:scale-95 duration-200"
+          *ngFor="let each_element of navbar_list">
+          {{ each_element }}
+        </li>
+        </ul>
+        <div class="ml-4 relative inline-block text-left">
+          <div>
+            <button type="button"
+              class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              id="menu-button" aria-expanded="true" aria-haspopup="true" (click)="showModal()">
+              Manage
+              <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div *ngIf="flag"
+            class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+            <div class="py-1" role="none">
+              <ul class="p-3 text-semibold">
+                <li class="mb-1 font-semibold gap-2" *ngFor="let items of profile_manager"><a href="/">
+                    <div class="flex flex-row gap-2 items-center">{{items.item}} <img src={{items.icon}} alt="" /> </div>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
 </div>
+      </div>

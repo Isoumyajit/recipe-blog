@@ -1,0 +1,4 @@
+.btn-manage:hover {
+   background-color: rgb(6, 180, 180);
+   transition: 0.2s ease-in-out;
+}
