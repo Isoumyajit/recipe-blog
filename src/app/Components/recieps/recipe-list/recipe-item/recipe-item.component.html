@@ -1,1 +1,11 @@
-<p>recipe-item works!</p>
+<div [id]="recipeIndex" class="flex flex-col mb-3">
+  <div class=" bg-gray-100 rounded-sm border-2 border-red-400">
+    <div class="bg-orange-400 text-lg font-semibold p-1">{{recipeItem?.name}}</div>
+    <div class=" cursor-pointer flex flex-row  justify-between items-center p-2" (click)="sendRecipe(recipeIndex)">
+      <p>{{recipeItem?.description}}</p>
+      <div>
+        <img width="90" class="img-fluid img-thumbnail" [src]="recipeItem?.imagePath" />
+      </div>
+    </div>
+  </div>
+</div>

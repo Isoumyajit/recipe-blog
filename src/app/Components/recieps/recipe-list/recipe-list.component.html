@@ -1,1 +1,6 @@
-<p>recipe-list works!</p>
+<div>
+  <app-recipe-item *ngFor="let recipe of recipes; let id=index" [recipeItem]="recipe" [recipeIndex]="id"
+    (recipeEmmiter)="catch_transferRecipe($event)">
+  </app-recipe-item>
+</div>
+

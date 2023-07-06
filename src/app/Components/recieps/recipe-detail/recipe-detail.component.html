@@ -1,1 +1,14 @@
-<p>recipe-detail works!</p>
+<div class="mt-10 mb-5">
+  <p class="text-lg font-bold">Recipe Details</p>
+  <div class="mt-14 bg-slate-100 w-full">
+    <div class="p-1 bg-orange-300 font-semibold text-lg">
+      {{recipeItem?.name}}
+    </div>
+    <div class="p-2">
+      <p>{{recipeItem?.description}}</p>
+    </div>
+    <div class="p-2">
+      <img width="200" [src]="recipeItem?.imagePath" />
+    </div>
+  </div>
+</div>

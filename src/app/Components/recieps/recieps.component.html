@@ -1,1 +1,11 @@
-<p>recieps works!</p>
+<div class="row">
+  <div class="col-sm-6">
+    <button class="btn btn-success m-10"> New Recipe</button>
+    <div class="m-1 w-full">
+      <app-recipe-list [recipes]="recipes" (recipeIndexEmmiter)="catchRecipe($event)"></app-recipe-list>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <app-recipe-detail [recipeItem]="recipe"></app-recipe-detail>
+  </div>
+</div>
