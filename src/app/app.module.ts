@@ -10,7 +10,10 @@ import { RecipeDetailComponent } from './Components/recieps/recipe-detail/recipe
 import { RecipeListComponent } from './Components/recieps/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './Components/recieps/recipe-list/recipe-item/recipe-item.component';
 import { IngredientsListComponent } from './Components/ingredients-list/ingredients-list.component';
-
+import { RecipeEditComponent } from './Components/recieps/recipe-edit/recipe-edit.component';
+import { RecipeAddComponent } from './Components/recieps/recipe-add/recipe-add.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RecipeService } from 'src/Services/recipe.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +23,12 @@ import { IngredientsListComponent } from './Components/ingredients-list/ingredie
     RecipeDetailComponent,
     RecipeListComponent,
     RecipeItemComponent,
-    IngredientsListComponent
+    IngredientsListComponent,
+    RecipeEditComponent,
+    RecipeAddComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [RecipeService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

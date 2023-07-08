@@ -8,9 +8,9 @@ import { Recipe } from '../model/recipe.model';
 })
 export class RecipeListComponent {
   @Input() recipes: Recipe[];
-  @Output() recipeIndexEmmiter = new EventEmitter<Recipe>();
+  @Output() recipeIndexEmmiter = new EventEmitter<number>();
   catch_transferRecipe(event_data: number) {
-    this.recipeIndexEmmiter.emit(this.recipes[event_data]);
+    this.recipeIndexEmmiter.emit(event_data);
   }
   constructor() {}
 }

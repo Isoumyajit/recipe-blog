@@ -1,14 +1,23 @@
 <div class="mt-10 mb-5">
   <p class="text-lg font-bold">Recipe Details</p>
-  <div class="mt-14 bg-slate-100 w-full">
+  <div class="mt-14 bg-slate-100 w-full rounded-sm border-2 border-orange-300">
     <div class="p-1 bg-orange-300 font-semibold text-lg">
-      {{recipeItem?.name}}
+      {{ recipeItem?.name }}
     </div>
     <div class="p-2">
-      <p>{{recipeItem?.description}}</p>
+      <p>{{ recipeItem?.description }}</p>
     </div>
     <div class="p-2">
       <img width="200" [src]="recipeItem?.imagePath" />
     </div>
+    <button
+      class="m-2 rounded-sm border-2 border-red-500 bg-red-200 items-center pl-3 pr-3 pt-1 pb-1 hover:scale-105 duration-200"
+      (click)="handleEdit($event)">
+      Edit
+    </button>
   </div>
+</div>
+<div *ngIf="showEditModal" class="absolute">
+  <app-recipe-edit (showEditModal)="handleEdit($event)" [modalData]="recipeItem"
+    (editDataEmitter)="catchUpdatedRecipe($event)"></app-recipe-edit>
 </div>

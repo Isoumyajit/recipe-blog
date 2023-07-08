@@ -1,11 +1,14 @@
 <div class="row">
   <div class="col-sm-6">
-    <button class="btn btn-success m-10"> New Recipe</button>
+    <button class="btn btn-success m-10" (click)="createNewRecipe()"> New Recipe</button>
     <div class="m-1 w-full">
       <app-recipe-list [recipes]="recipes" (recipeIndexEmmiter)="catchRecipe($event)"></app-recipe-list>
     </div>
   </div>
-  <div class="col-md-6">
-    <app-recipe-detail [recipeItem]="recipe"></app-recipe-detail>
+  <div class="col-md-6" *ngIf="flagEditModal">
+    <app-recipe-detail [recipeItem]="recipe" (updatedRecipeEmitter)="updateRecipes($event)"></app-recipe-detail>
+  </div>
+  <div class="col-md-6" *ngIf="flagAddModal">
+    <app-recipe-add (hideModalemitter)="hideAddModal($event)" (recipeEmitter)="addNewRecipe($event)"></app-recipe-add>
   </div>
 </div>
